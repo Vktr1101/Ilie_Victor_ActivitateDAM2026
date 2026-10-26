@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">lab4</string>
+    <string name="introduceti_marca">Introduceti marca</string>
+    <string name="introduceti_viteza">Introduceti viteza</string>
+    <string name="introduceti_puterea">Introduceti puterea</string>
+    <string name="are_oscilatie">Are oscilatie?</string>
+    <string name="este_pornit">Este pornit?</string>
+    <string name="trimite_datele">Trimite datele</string>
+    <string name="deschide_formular_adaugare">Deschide formular adaugare</string>
+    <string name="datele_obiectului_vor_aparea_aici">Datele obiectului vor aparea aici</string>
+</resources>

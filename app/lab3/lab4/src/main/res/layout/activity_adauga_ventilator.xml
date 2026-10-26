@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AdaugaVentilator">
+
+    <EditText
+        android:id="@+id/marca_ET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/introduceti_marca"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/viteza_ET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/introduceti_viteza"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/putereConsumata_ET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/introduceti_puterea"
+        android:inputType="number" />
+
+    <CheckBox
+        android:id="@+id/areOscilatie_CB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/are_oscilatie" />
+
+    <CheckBox
+        android:id="@+id/estePornit_CB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/este_pornit" />
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/trimite_datele"
+        android:onClick="culegeDate" />
+
+</LinearLayout>
