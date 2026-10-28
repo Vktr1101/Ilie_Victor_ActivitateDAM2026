@@ -3,6 +3,7 @@ package com.example.lab4;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,9 +17,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class MainActivity extends AppCompatActivity {
     private TextView tvRezultat;
+    private ArrayList<Ventilator> ventilatorList = new ArrayList<>();
 
     private final ActivityResultLauncher<Intent> launcherAdaugare = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                     if (bundle != null) {
                         Ventilator ventilatorPrimit = bundle.getParcelable("obiect_ventilator");
                         if (ventilatorPrimit != null) {
+                            ventilatorList.add(ventilatorPrimit);
                             tvRezultat.setText(ventilatorPrimit.toString());
                             Toast.makeText(this, "Obiect primit: " + ventilatorPrimit.toString(), Toast.LENGTH_LONG).show();
                         }
@@ -48,11 +52,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
         tvRezultat = findViewById(R.id.textView);
-        android.widget.Button btnDeschide = findViewById(R.id.button);
+        Button btnDeschide = findViewById(R.id.button);
+        Button btnVeziLista = findViewById(R.id.btnLista);
 
         btnDeschide.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AdaugaVentilator.class);
             launcherAdaugare.launch(intent);
+        });
+
+        btnVeziLista.setOnClickListener(v -> {
+            Intent intentLista = new Intent(MainActivity.this, ListaVentilatoareActivity.class);
+            intentLista.putParcelableArrayListExtra("lista_mea", ventilatorList);
+            startActivity(intentLista);
         });
     }
 }

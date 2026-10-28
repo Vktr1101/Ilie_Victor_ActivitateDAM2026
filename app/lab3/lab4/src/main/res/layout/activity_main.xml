@@ -20,4 +20,10 @@
         android:layout_height="wrap_content"
         android:text="@string/datele_obiectului_vor_aparea_aici" />
 
+    <Button
+        android:id="@+id/btnLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/vezi_lista" />
+
 </LinearLayout>
