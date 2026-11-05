@@ -18,6 +18,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private TextView tvRezultat;
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnVeziLista.setOnClickListener(v -> {
             Intent intentLista = new Intent(MainActivity.this, ListaVentilatoareActivity.class);
-            intentLista.putParcelableArrayListExtra("lista_mea", ventilatorList);
+            intentLista.putParcelableArrayListExtra("lista_mea", (ArrayList<Ventilator>)ventilatorList);
             startActivity(intentLista);
         });
     }

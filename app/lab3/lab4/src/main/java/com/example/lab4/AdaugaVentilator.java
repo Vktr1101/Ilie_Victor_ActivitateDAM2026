@@ -24,6 +24,23 @@ public class AdaugaVentilator extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        if (getIntent().hasExtra("obiect_de_editat")) {
+            Ventilator v = getIntent().getParcelableExtra("obiect_de_editat");
+            if (v != null) {
+                EditText etMarca = findViewById(R.id.marca_ET);
+                EditText etViteza = findViewById(R.id.viteza_ET);
+                EditText etPutereConsumata = findViewById(R.id.putereConsumata_ET);
+                CheckBox cbOscilatie = findViewById(R.id.areOscilatie_CB);
+                CheckBox cbPornit = findViewById(R.id.estePornit_CB);
+
+                etMarca.setText(v.getMarca());
+                etViteza.setText(String.valueOf(v.getViteza()));
+                etPutereConsumata.setText(String.valueOf(v.getPutereConsumata()));
+                cbOscilatie.setChecked(v.getAreOscilatie());
+                cbPornit.setChecked(v.getEstePornit());
+            }
+        }
     }
 
     public void culegeDate(View view) {

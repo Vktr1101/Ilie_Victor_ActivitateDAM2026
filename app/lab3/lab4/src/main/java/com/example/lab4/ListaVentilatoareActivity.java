@@ -1,11 +1,14 @@
 package com.example.lab4;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -16,7 +19,26 @@ import java.util.ArrayList;
 public class ListaVentilatoareActivity extends AppCompatActivity {
 
     private ArrayList<Ventilator> listaPrimita;
-    private ArrayAdapter<Ventilator> adapter;
+    private VentilatorAdapter adapter;
+//    private ArrayAdapter<Ventilator> adapter;
+    private int pozitieEditata = -1;
+
+    private final ActivityResultLauncher<Intent> launcherEditare = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    Bundle bundle = result.getData().getExtras();
+                    if (bundle != null) {
+                        Ventilator ventilatorEditat = bundle.getParcelable("obiect_ventilator");
+                        if (ventilatorEditat != null && pozitieEditata != -1) {
+                            listaPrimita.set(pozitieEditata, ventilatorEditat);
+                            adapter.notifyDataSetChanged();
+                            Toast.makeText(this, "Obiect modificat cu succes!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+            }
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +58,14 @@ public class ListaVentilatoareActivity extends AppCompatActivity {
         } else {
             listaPrimita = new ArrayList<>();
         }
-
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaPrimita);
+        adapter = new VentilatorAdapter(this, listaPrimita);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
-            Ventilator ventilatorSelectat = listaPrimita.get(position);
-            Toast.makeText(this, ventilatorSelectat.toString(), Toast.LENGTH_SHORT).show();
+            pozitieEditata = position;
+            Intent intent = new Intent(ListaVentilatoareActivity.this, AdaugaVentilator.class);
+            intent.putExtra("obiect_de_editat", listaPrimita.get(position));
+            launcherEditare.launch(intent);
         });
 
         listView.setOnItemLongClickListener((parent, view, position, id) -> {

@@ -62,6 +62,26 @@ public class Ventilator implements Parcelable {
                 ", Pornit=" + (estePornit ? "Da" : "Nu") +
                 '}';
     }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public int getViteza() {
+        return viteza;
+    }
+
+    public double getPutereConsumata() {
+        return putereConsumata;
+    }
+
+    public boolean getAreOscilatie() {
+        return areOscilatie;
+    }
+
+    public boolean getEstePornit() {
+        return estePornit;
+    }
 }
 
 
