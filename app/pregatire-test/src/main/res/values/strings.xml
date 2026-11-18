@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">pregatire-test</string>
+    <string name="adauga_telefon">Adauga telefon</string>
+    <string name="vezi_lista">Vezi Lista</string>
+    <string name="id_telefon">Id telefon</string>
+    <string name="model">Model</string>
+    <string name="este_pornit">Este pornit?</string>
+    <string name="salveaza">Salveaza</string>
+
+    <string-array name="optiuni_memorie">
+        <item>64</item>
+        <item>128</item>
+        <item>256</item>
+        <item>512</item>
+    </string-array>
+</resources>

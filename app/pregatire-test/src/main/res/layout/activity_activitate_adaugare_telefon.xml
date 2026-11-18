@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivitateAdaugareTelefon">
+
+    <EditText
+        android:id="@+id/etId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/id_telefon"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/etModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/model"
+        android:inputType="text" />
+
+    <Spinner
+        android:id="@+id/spSpatiuMemorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/optiuni_memorie" />
+
+    <CheckBox
+        android:id="@+id/cbEstePornit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/este_pornit" />
+
+    <Button
+        android:id="@+id/btnSalveaza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/salveaza" />
+
+</LinearLayout>

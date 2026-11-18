@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">pregatire-test1</string>
+    <string name="titlu">Titlu</string>
+    <string name="anul_aparitiei">Anul aparitiei</string>
+    <string name="este_valabila"><![CDATA[Este valabila?]]></string>
+    <string name="salveaza">Salveaza</string>
+    <string name="adauga_carte">Adauga carte</string>
+    <string name="vezi_lista">Vezi lista</string>
+
+    <string-array name="optiuni_editura">
+        <item>Editura 1</item>
+        <item>Editura 2</item>
+        <item>Editura 3</item>
+        <item>Editura 4</item>
+    </string-array>
+
+</resources>
