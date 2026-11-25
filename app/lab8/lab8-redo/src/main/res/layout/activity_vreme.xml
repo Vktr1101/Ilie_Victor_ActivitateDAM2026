@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".VremeActivity">
+
+    <EditText
+        android:id="@+id/etOras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/introdu_numele_orasului"
+        android:inputType="text" />
+
+    <Spinner
+        android:id="@+id/spnZile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnCauta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cauta_vreme" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/tvRezultat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp" />
+    </ScrollView>
+
+</LinearLayout>

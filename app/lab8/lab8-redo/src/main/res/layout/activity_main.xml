@@ -14,4 +14,10 @@
         android:layout_height="wrap_content"
         android:text="@string/vizioneaza_ventilatoare" />
 
+    <Button
+        android:id="@+id/btnVreme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/vizioneaza_vremea" />
+
 </LinearLayout>

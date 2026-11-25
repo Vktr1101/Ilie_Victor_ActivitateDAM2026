@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">lab8-redo</string>
     <string name="vizioneaza_ventilatoare">Vizioneaza ventilatoare</string>
+    <string name="vizioneaza_vremea">Vizioneaza vremea</string>
+    <string name="introdu_numele_orasului">Introdu numele orasului</string>
+    <string name="cauta_vreme">Cauta vreme</string>
 </resources>

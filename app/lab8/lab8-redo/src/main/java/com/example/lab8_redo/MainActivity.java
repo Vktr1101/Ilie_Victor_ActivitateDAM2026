@@ -26,8 +26,14 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnVizioneaza = findViewById(R.id.btnVizionare);
         btnVizioneaza.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, VizioneazaVentilatoare.class);
-            startActivity(intent);
+            Intent it = new Intent(MainActivity.this, VizioneazaVentilatoare.class);
+            startActivity(it);
+        });
+
+        Button btnVreme = findViewById(R.id.btnVreme);
+        btnVreme.setOnClickListener(v -> {
+            Intent it = new Intent(MainActivity.this, VremeActivity.class);
+            startActivity(it);
         });
     }
 }
